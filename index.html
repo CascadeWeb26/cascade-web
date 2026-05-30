@@ -445,11 +445,8 @@ body.no-motion .rot-word:not(.is-active) { display: none; }
   padding: 8px 16px;
   border-radius: 999px;
 }
-.work:hover .work-shot {
-  background:
-    repeating-linear-gradient(135deg, rgba(109,207,246,0.04) 0 12px, transparent 12px 24px),
-    linear-gradient(160deg, #141417, #0c0c0e);
-}
+.work-shot--photo { background-size: cover; background-position: center; background-repeat: no-repeat; }
+.work-shot--photo::before { display: none; }
 .work-shot--logo { background: #000; justify-items: center; align-items: center; }
 .work-shot--logo::before { display: none; }
 .work-shot--logo img { height: 90px; width: auto; opacity: 1; }
@@ -918,7 +915,7 @@ body.no-motion [data-stagger] > * { opacity: 1 !important; transform: none !impo
 
     <div class="work-grid" data-stagger>
       <a href="https://barberrepublicmtl.vercel.app" target="_blank" rel="noopener" class="work">
-        <div class="work-shot" data-label="Barber Republic MTL"></div>
+        <div class="work-shot work-shot--photo" data-label="Barber Republic MTL" style="background-image:url('assets/Barberrepublic.jpg')"></div>
         <div class="work-meta">
           <div>
             <h3>Barber Republic MTL</h3>
