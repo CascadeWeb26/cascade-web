@@ -6,15 +6,47 @@
 <title>Cascade Web — Votre présence en ligne, simplifiée.</title>
 <meta name="description" content="Des sites web modernes pour les salons et barbershops du Québec. Livré en moins d'une semaine.">
 
-<!-- Google Fonts — loaded async to avoid render-blocking -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"></noscript>
+<!-- Self-hosted fonts — same origin, preloaded, zero CLS -->
+<link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" type="image/png" href="assets/logo-cw.png">
 
 
 <style>
+/* ---- Self-hosted fonts ---- */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('assets/fonts/inter-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('assets/fonts/inter-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('assets/fonts/space-grotesk-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('assets/fonts/space-grotesk-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 /* ============================================================
    Cascade Web — dark, minimal, premium one-page site
    ============================================================ */
@@ -736,7 +768,7 @@ body.no-motion [data-stagger] > * { opacity: 1 !important; transform: none !impo
 <header class="nav" id="nav">
   <div class="container nav-inner">
     <a href="#top" class="brand" aria-label="Cascade Web">
-      <img src="assets/logo-cw.png" alt="Cascade Web" width="407" height="368">
+      <img src="assets/logo-cw.png" alt="Cascade Web" width="300" height="271">
       <span class="brand-txt">CASCADE&nbsp;WEB</span>
     </a>
     <nav class="nav-links" id="nav-links" aria-label="Navigation principale">
@@ -934,7 +966,7 @@ body.no-motion [data-stagger] > * { opacity: 1 !important; transform: none !impo
       </a>
 
       <a href="https://cascadeweb.vercel.app" target="_blank" rel="noopener" class="work">
-        <div class="work-shot work-shot--logo"><img src="assets/logo-cw.png" alt="Cascade Web" width="407" height="368"></div>
+        <div class="work-shot work-shot--logo"><img src="assets/logo-cw.png" alt="Cascade Web" width="300" height="271"></div>
         <div class="work-meta">
           <div>
             <h3>Cascade Web</h3>
@@ -1019,7 +1051,7 @@ body.no-motion [data-stagger] > * { opacity: 1 !important; transform: none !impo
     <div class="footer-top">
       <div>
         <a href="#top" class="brand" aria-label="Cascade Web">
-          <img src="assets/logo-cw.png" alt="Cascade Web" width="407" height="368">
+          <img src="assets/logo-cw.png" alt="Cascade Web" width="300" height="271">
         </a>
         <p class="footer-tag">Des sites web modernes pour les entreprises locales.</p>
       </div>
@@ -1115,16 +1147,18 @@ body.no-motion [data-stagger] > * { opacity: 1 !important; transform: none !impo
 
     function revealInView() {
       var vh = window.innerHeight || document.documentElement.clientHeight;
+      var toReveal = [];
       revealEls.forEach(function (el) {
         if (el.classList.contains('in')) return;
         var r = el.getBoundingClientRect();
-        if (r.top < vh * 0.96 && r.bottom > 0) {
-          if (el.hasAttribute('data-stagger')) {
-            Array.prototype.forEach.call(el.children, function (c, i) { c.style.transitionDelay = (i * 90) + 'ms'; });
-          }
-          el.classList.add('in');
-          io.unobserve(el);
+        if (r.top < vh * 0.96 && r.bottom > 0) toReveal.push(el);
+      });
+      toReveal.forEach(function (el) {
+        if (el.hasAttribute('data-stagger')) {
+          Array.prototype.forEach.call(el.children, function (c, i) { c.style.transitionDelay = (i * 90) + 'ms'; });
         }
+        el.classList.add('in');
+        io.unobserve(el);
       });
     }
     requestAnimationFrame(revealInView);
