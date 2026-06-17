@@ -492,10 +492,10 @@ body.no-motion .rot-word:not(.is-active) { display: none; }
    ============================================================ */
 .price-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 22px;
   margin-top: 64px;
-  max-width: 920px;
+  max-width: 520px;
   margin-inline: auto;
 }
 .plan {
@@ -985,29 +985,11 @@ body.no-motion [data-stagger] > * { opacity: 1 !important; transform: none !impo
   <div class="container">
     <div class="section-head reveal" style="margin-inline:auto;text-align:center;max-width:680px;">
       <span class="eyebrow" style="justify-content:center;">Tarifs</span>
-      <h2 class="title">Des forfaits simples et transparents.</h2>
-      <p class="lede" style="margin-inline:auto;">Pas de frais cachés. Choisissez la formule qui correspond à votre salon.</p>
+      <h2 class="title">Un forfait simple et transparent.</h2>
+      <p class="lede" style="margin-inline:auto;">Pas de frais cachés. Tout ce qu'il faut pour attirer des clients en ligne.</p>
     </div>
 
     <div class="price-grid" data-stagger>
-      <!-- Essentiel -->
-      <article class="plan">
-        <div class="plan-name">Plan Essentiel</div>
-        <div class="plan-price">
-          <span class="amt">799$</span>
-          <span class="per">paiement unique</span>
-        </div>
-        <p class="plan-desc">Parfait pour lancer une présence en ligne professionnelle, rapidement et sans abonnement.</p>
-        <ul>
-          <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span> Site web sur mesure</li>
-          <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span> Optimisé mobile et rapide</li>
-          <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span> Référencement Google de base</li>
-          <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span> Livraison en moins de 2 semaines</li>
-          <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span> 14 jours de support inclus</li>
-        </ul>
-        <a href="#contact" class="btn btn-ghost btn-block">Choisir Essentiel</a>
-      </article>
-
       <!-- Gestion Complète -->
       <article class="plan featured">
         <span class="plan-badge">Recommandé</span>
@@ -1016,12 +998,14 @@ body.no-motion [data-stagger] > * { opacity: 1 !important; transform: none !impo
           <span class="amt">150$</span>
           <span class="per">/mois</span>
         </div>
-        <p class="plan-commitment">Engagement de 12 mois requis</p>
+        <p class="plan-commitment">Engagement de 6 mois requis</p>
         <p class="plan-desc">Aucuns frais d'installation. On crée votre site et on s'occupe de tout au quotidien. Tranquillité d'esprit totale.</p>
         <ul>
-          <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span> Tout le forfait Essentiel, inclus</li>
+          <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span> Site web sur mesure</li>
+          <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span> Optimisé pour attirer des clients</li>
+          <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span> Référencement Google de base</li>
           <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span> Hébergement et nom de domaine gérés</li>
-          <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span> Modifications incluses (3x par mois)</li>          <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span> Support prioritaire, toujours disponible</li>
+          <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span> Modifications incluses (3x par mois)</li>
         </ul>
         <a href="#contact" class="btn btn-primary btn-block">Choisir Gestion Complète</a>
       </article>
