@@ -36,7 +36,7 @@ Booking: https://calendly.com/cascadeweb-info/30min
 
 ## Why Cascade Web (4 points)
 - Livraison en moins de 2 semaines
-- Agence locale basée à Montréal
+- Agence locale basée à Québec (Ville de Québec)
 - Sites optimisés pour attirer des clients
 - Support inclus et toujours disponible
 
@@ -63,8 +63,8 @@ Booking: https://calendly.com/cascadeweb-info/30min
 - Idéal pour ceux qui veulent tout déléguer
 
 ## Portfolio (fake sites for now)
-- Barber Republic MTL (dark modern style)
-- Salon Élite Montréal (light minimalist style)
+- Barber Republic QC (dark modern style)
+- Salon Élite Québec (light minimalist style)
 - Cascade Web itself
 
 ## Tech Stack
